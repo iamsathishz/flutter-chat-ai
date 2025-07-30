@@ -1,16 +1,17 @@
 name: Flutter - Android CI
+
 on:
   push:
     branches:
-      - main
       - developement
   pull_request:
     branches:
-      - main
       - developement
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -25,7 +26,7 @@ jobs:
         with:
           flutter-version: '3.29.3'
 
-      - name: Get dependencies
+      - name: Install dependencies
         run: flutter pub get
 
       - name: Run tests
@@ -34,7 +35,8 @@ jobs:
       - name: Build APK
         run: flutter build apk --release
 
-      - name: Upload APK
+      - name: Upload release APK
         uses: actions/upload-artifact@v2
         with:
           name: app-release.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
