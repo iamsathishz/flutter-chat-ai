@@ -17,6 +17,7 @@ A modern, real-time AI chatbot built with **Flutter**, using OpenRouter’s LLaM
 - 💾 Local storage using `Hive`
 - 🔄 Graceful request cancellation
 - ✅ Works on Android, iOS, and Web
+- 🛠️ CI/CD for Android via GitHub Actions
 
 ---
 
@@ -73,6 +74,31 @@ Accept: text/event-stream
 | State Mgmt  | Provider|
 | Backend     | OpenRouter API |
 | Storage     | Hive |
+| CI/CD	     | GitHub Actions |
+
+---
+
+## 🔄 GitHub Actions CI/CD
+### 📱 Android – CI Pipeline
+GitHub Actions automatically builds .apk and .aab files on push/pull requests to development branch.
+
+✅ Supported Tasks:
+✅ Flutter installation
+
+✅ Dependency caching
+
+✅ APK + AAB release builds
+
+✅ Artifact upload with version tag
+
+## 🍎 iOS Build Note
+### To build .ipa (iOS):
+
+You must use a macOS system (mac or cloud runner)
+
+Use Codemagic, Bitrise, or manual Xcode build on a Mac with Apple Developer account.
+
+GitHub Actions cannot build iOS apps without a macOS runner.
 
 ---
 
